@@ -1,0 +1,269 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+        
+    <aside class="body-element">
+      <nav id="navbar">
+          <header class="nav-element" id="nav-header">Basics of HTML & CSS</header>
+          <ul class="nav-element" id="nav-list">
+            <li><a class="nav-link" href="#Getting_Started" id="link-1">Getting Started</a></li>
+            <li><a class="nav-link" href="#Adding_Content" id="link-2">Adding Content</a></li>
+            <li><a class="nav-link" href="#Diving_Deeper" id="link-3">Diving Deeper</a></li>
+            <li><a class="nav-link" href="#Styling_with_HTML" id="link-4">Styling with HTML</a></li>
+            <li><a class="nav-link" href="#Intro_to_CSS" id="link-5">Intro to CSS</a></li>
+        </ul>
+      </nav>
+    </aside>  
+    <div class="fixed-button">
+    <button onclick="darkLight()">Light/Dark Mode</button>
+    </div>
+    <main class="body-element" id="main-doc">
+      
+      <section class="main-section" id="Getting_Started">
+        <header>Getting Started</header>
+        <div class="section-content"> 
+        <h2>What is HTML?</h2>
+        <p>"<strong>HTML</strong>" or "<strong>H</strong>yper-<strong>T</strong>ext-<strong>M</strong>arkup-<strong>L</strong>anguange" is the language that devolopers use to create web pages like this one. HTML is a series of elements that provide content to a page including text and images. While there are ways to add minor styling to HTML content, at its core, HTML is comprised of all the "raw" information that the creater of a page would like to convey. Before we get started lets take a look at several definitions and pieces of information that are important to understand before diving deeper in to the world of HTML: </p>
+        <ul>
+          <li>Syntax- The important order in which somenting is created and used.</li>
+          <li>Nesting- Placing an item or group of items within another item.</li>
+        </ul>
+        
+        <h2>HTML Syntax: Parent and Child Elements</h2>  
+        <p>It is helpful to think of "HTML" as a human body, where a body would be a main "parent-element" which contains a grouping of secondary "child-elements" like arms and legs, this is useful to a developer so they can keep their HTML document well organized. This technique is also helpful later on when a developer wants to style the content of their page, now they can choose to either alter a whole group of elements (using parent-element) or just one specific element (child-element). If we were to create a single part of the human body using HTML syntax, it might look something like this:</p>
+        <code>
+          <p>&lt;human&gt;</p>
+            <p class="tab">&lt;body&gt;</p>
+              <p class="tab2">&lt;arms&gt;</p>
+                <p class="tab3">&lt;right-arm&gt;</p>
+                  <p class="tab4">&lt;hand&gt;</p>
+                    <p class="tab5">&lt;fingers&gt;</p>
+                      <p class="tab6">&lt;thumb&gt;&lt;/thumb&gt;</p>
+                      <p class="tab6">&lt;index&gt;&lt;/index&gt;</p>
+                      <p class="tab6">&lt;middle&gt;&lt;/middle&gt;</p>
+                      <p class="tab6">&lt;ring&gt;&lt;/ring&gt;</p>
+                      <p class="tab6">&lt;pinky&gt;&lt;/pinky&gt;</p>
+                    <p class="tab5">&lt;/fingers&gt;</p>
+                  <p class="tab4">&lt;/hand&gt;</p>
+                <p class="tab3">&lt;/right-arm&gt;</p>
+              <p class="tab2">&lt;/arms&gt;</p>
+            <p class="tab">&lt;/body&gt;</p>
+          <p>&lt;/human&gt;</p>
+        </code>
+        <p class="code-descrip">In the example above you can see that each element has an opening tag and a coorisponding closing tag that contain a group of other elements this is a great example of a parent-child relationship. </p>
+        <p>To recap everything so far:</p>
+        <ul>
+          <li>Each element that is enclosed in the tags of another element will become the child-element with the enclosing element being the parent-element i.e. "body" is the child-element of "human", its parent-element. </li>
+          <li>Parent elements can contain more than one child element, this can be seen where "thumb", "index", "middle", "ring", and "pinky" all being the child-elements nested within the parent-element "fingers" or if we were to add a "left-arm" element we would make sure that it would be nested after "arms", alongside "right-arm", and before any other element of its own.</li>
+          <li>It is important to note that, theoreticlly, the process of nesting parent and child elements could continue indefinitly with the developer creating and nesting as many elements as they choose. While this might be the case, the best developers only nest as much as they need to as this will help keep their documents well organized.</li>
+            </ul>
+      
+        <h2>Setting Up HTML Documents</h2>
+        <p>In the previous example we used the parts of the human body as placeholders for true HTML elements, this is a great example as it helps us visualize the relationship between parent and child elements with something that we are all familiar with, this gives us a better idea of the overall setup and flow of an HTML document. Now that we understand this important relationship we can take a look at an example of a very small clip of actual code that would be used as the primary framework to an HTML document:</p>
+        <code>
+          <p>&lt;!DOCTYPE html&gt;</p>
+          <p>&lt;html&gt;</p>
+            <p class="tab">&lt;head&gt;</p>
+              <p class="tab2">&lt;title&gt;</p>
+              <p class="tab3">Title of the Page Goes Here</p>
+              <p class="tab2">&lt;/title&gt;</p>
+            <p class="tab">&lt;/head&gt;</p><br>
+          
+            <p class="tab">&lt;body&gt;</p>
+              <p class="tab2">Content of the Body Goes Here; Headers, Paragraphs, and Images.</p>
+            <p class="tab">&lt;/body&gt;</p>
+          <p>&lt;/html&gt;</p>
+        </code>
+        <p class="code-descrip">When evaluating the code above it is important to focus on each element as they all play very specific roles that are required to set up our web page.</p>
+        <p>Lets take a look at each individual element:</p>
+        <ul>
+          <li><strong>!DOCTYPE html</strong>- !DOCTYPE is very important and is used at the top of every HTML document, it is what tells the browser or other code reader that we have written our code using HTML and would like it to read and display the code in that format.</li>
+          <li><strong>html</strong>- this is our HTML document, the document itself contains two main child elements:</li>
+            <ul>
+            <li><strong>head</strong>- the head section of an HTML document contains information about the page that is not visable on the primary page itself, this includes the elements such as the title of the page that will appear in the tab of a browser.</li>
+            <li><strong>body</strong>- the body section of an HTML document is where a developer will spend most of their time developing the "raw" data that they want a viewer to see on the  webpage itself, this will include headers, paragraphs, lists, and images, all of which we will learn about down below.</li>
+          </ul>
+        </ul>
+        <p>Now that we know how to set up our HTML document lets learn how to start adding some content to our page!</p>
+          
+        </div>
+      </section>
+        
+      <section class="main-section" id="Adding_Content">
+        <header>Adding Content</header>
+        <div class="section-content">
+        
+        
+        <h2>Reading Between the Tags</h2>
+        <p>In the previous section we learned the basic structure and syntax of HTML, this is useful when we are setting up our page, however, every webpage needs content. Webpages consist of two primary types of content; text and images. In this section we will learn how to add several of the basic forms of text to our webpage as well as how to add an image.</p>
+        
+        <h2>Headers</h2> 
+        <p>Headers can help us organize the layout and readability of our webpage by creating titles that provides information of the respective section. There are six main headers, each of which is smaller than the next starting with h1 being the largest down to h6 being the smallest. To set up a header section we will will start with an opening set of header tags with h1-6: "&lt;h1&gt;" followed by content: "&lt;h1&gt;Content" and finally we will close off the header with closing tags: "&lt;h1&gt;Content&lt;/h1&gt;". Below you will see an example of how to add each of the headers to your HTML file.</p>
+        <div class="html-results">
+          <code>
+          <p>&lt;h1&gt;Header 1&lt;/h1&gt;</p>
+          <p>&lt;h2&gt;Header 2&lt;/h2&gt;</p>
+          <p>&lt;h3&gt;Header 3&lt;/h3&gt;</p>
+          <p>&lt;h4&gt;Header 4&lt;/h4&gt;</p>
+          <p>&lt;h5&gt;Header 5&lt;/h5&gt;</p>
+          <p>&lt;h6&gt;Header 6&lt;/h6&gt;</p>
+        </code>
+          <div class="code-output" id="example-headers">
+            <h1>Header 1</h1>
+            <h2>Header 2</h2>
+            <h3>Header 3</h3>
+            <h4>Header 4</h4>
+            <h5>Header 5</h5>
+            <h6>Header 6</h6>
+          </div>  
+        </div>
+        <p class="code-descrip">Headers each have a default size which can be changed later on, but it is important to note that we use headers just like we set up an html document, where smaller headers of the same size will be nested in a larger header parent element, this helps keep our document sections organized and readable. Lets not get too caught up on this concept for now as it will be seen in all of the following sections.</p>
+            
+        <h2>Paragraphs</h2>
+        <p>Now that we know how to add headers to set up the sections of our web page, lets take a look on how to add the information in those sections. To add text we use 'p' or 'paragraph tags' just like headers we will use an opening and closing tag that is then filled with information inbetween to create a paragraph section like this one. Take a look below:</p>
+        <div class="html-results">
+          <code>
+          <p>&lt;h1&gt;Header 1&lt;/h1&gt;</p>
+          <p>&lt;h2&gt;Header 2&lt;/h2&gt;</p>
+          <p>&lt;p&gt;This is paragraph text!&lt;/p&gt;</p>
+          <p>&lt;h2&gt;Header 4&lt;/h2&gt;</p>
+          <p>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</p>
+          </code>
+          <div class="code-output" id="example-paragraph">
+          <h1>Header 1</h1>
+          <h2>Header 2</h2>
+          <p>This is paragraph text!</p>
+          <h2>Header 2</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>  
+        </div>
+        <p class="code-descrip">In this code, we set up a page that consists of a main title 'h1' that describes the page, this is followed by two sub sections represented by two 'h2' elements, and within both of those sections they contain paragraph text 'p'. Like we were talking about earlier it is important that headers and text are used in a successive parent-child relationship... if we wanted each 'h2' to have its own sub headers/sections it would be confusing if we used 'h6' for the next set of headers because we liked the size, instead, if we wanted to create new sub headers/sections within the 'h2' section we would use proper syntax and use 'h3' changing the size later if we would like.</p>
+          
+        <h2>Lists</h2>     
+        <p>Lists can be a very helpful way to display information as they often provide more concise clips of information. We can use two primary lists ordered or unordered depending on what type of information we are trying to present in our list. we use unordered lists 'ul' to present a list that doesent need to have any specific order or count to the items it contains. Ordered lists 'ol' are used when rank, order, or count of items in the list is needed. Each list is set up with opening and closing tags that contain list items 'li', one for each item we would like on our list. Take a look below to see how we set up a list:</p>
+        <div class="html-results">
+          <code>
+          <p>&lt;h1&gt;Lists&lt;/h1&gt;<p>
+          <p>&lt;h2&gt;Unordered List&lt;/h2&gt;<p>
+          <p>&lt;ul&gt;</p>
+            <p class="tab">&lt;li&gt;List Item&lt;/li&gt;</p>
+            <p class="tab">&lt;li&gt;List Item&lt;/li&gt;</p>
+            <p class="tab">&lt;li&gt;List Item&lt;/li&gt;</p>
+            <p class="tab">&lt;li&gt;List Item&lt;/li&gt;</p>
+          <p>&lt;/ul&gt;</p><br>
+          
+          <p>&lt;h2&gt;Ordered List&lt;/h2&gt;<p>
+          <p>&lt;ol&gt;</p>
+            <p class="tab">&lt;li&gt;List Item&lt;/li&gt;</p>
+            <p class="tab">&lt;li&gt;List Item&lt;/li&gt;</p>
+            <p class="tab">&lt;li&gt;List Item&lt;/li&gt;</p>
+            <p class="tab">&lt;li&gt;List Item&lt;/li&gt;</p>
+          <p>&lt;/ol&gt;</p>
+        </code>
+          <div class="code-output" id="example-list">
+          <h1>Lists</h1>
+          <h2>Unordered List</h2>
+          <ul> 
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+          </ul>
+          <h2>Ordered List</h2>
+          <ol>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
+          </ol>
+        </div> 
+        </div>
+        
+        <h2>Images</h2>
+        <p>Now that we can add text to our page lets also add an image as well. To add an image we only use one opening tag &lt;img&gt; that will contain two main elements for now:</p>
+        <ul>
+          <li>src = " " - this is where we will add our url to link the image we would like to add to the page into the page. When linking an image from the internet it is important that the whole url makes it into the quotations</li>
+          <li>alt = " " - if something is wrong with our link an alternate text description will be needed to tell the viewer what was going to be there. This is more importantly used for accessability for those who require the use of a screen reader, for example, one who is visually impared.</li>
+          <li>All together the tag will look something like this: &lt;img src="https://www.cute-images.com/cat"  alt="cute cat photo"&gt;</li>
+        </ul>  
+        <div class="html-results">
+          <code>
+          <p>&lt;h1&gt;Images&lt;/h1&gt;<p>
+          <p>&lt;h2&gt;Linked Image&lt;/h2&gt;<p><br><br>
+          <p>&lt;img src="https://images.unsplash.com/photo-1493406300581-484b937cdc41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="cat walking on wall"&gt;</p><br><br>
+          <p>&lt;p&gt;Some cool information about the photo&lt;/p&gt;</p>
+          <p>&lt;h2&gt;Linked Image with a Broken Path&lt;/h2&gt;<p><br><br>
+          <p>&lt;img src="_____://images.unsplash.com/photo-1493406300581-484b937cdc41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="cat walking on wall"&gt;</p><br><br>
+          <p>&lt;p&gt;Some cool information about the photo&lt;/p&gt;</p>
+        </code>
+          <div class="code-output" id="example-list">
+          <h1>Images</h1>
+          <h2>Linked Image</h2>
+          <img src="https://images.unsplash.com/photo-1493406300581-484b937cdc41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="cat walking on wall">
+          <p>Some cool information about the photo</p>
+          <h2>Linked Image with Broken Path</h2>
+          <img id="broken-image" src="_____://images.unsplash.com/photo-1493406300581-484b937cdc41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="cat walking on wall">
+          <p>Some cool information about the photo</p>
+          </div> 
+        </div>
+        
+        </div>
+        
+      </section>
+      
+      <section class="main-section" id="Diving_Deeper">
+        <header>Diving Deeper</header>
+        <div class="section-content">
+          
+          <h2>Section Under Construction</h2>
+          <p>Check back soon for updates on this section as it is currently under construction!</p>
+        </div>
+      </section>
+      
+      <section class="main-section" id="Styling_with_HTML">
+        <header>Styling with HTML</header>
+        <div class="section-content">
+          
+          <h2>Section Under Construction</h2>
+          <p>Check back soon for updates on this section as it is currently under construction!</p>
+        </div>
+      </section>
+      
+      <section class="main-section" id="Intro_to_CSS">
+        <header>Intro to CSS</header>
+        <div class="section-content">
+          
+          <h2>Section Under Construction</h2>
+          <p>Check back soon for updates on this section as it is currently under construction!</p>
+        </div>
+      </section>
+      
+    </main>
+    
+    <footer>
+      <div class="footer-element">
+      <div class="foot-nav" id="nav-bar">
+        <div class="foot-nav">
+        <a title="Gatos por Vida Instagram" href="https://www.instagram.com/gatos_por_vida/" target="_blank" rel="noopener"><img class="social-icons" id="instagram-img" src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-instagram-1.png&r=0&g=0&b=0"></a>
+      </div>
+        <div class="foot-nav">
+        <a title="Orion's Linkedin" href="https://www.linkedin.com/in/orion-jaramillo/" target="_blank" rel="noopener"><img class="social-icons" id="linkdin-img" src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-linkedin-3.png&r=0&g=0&b=0"></a>
+      </div>
+        <div class="foot-nav">
+        <a title="Orion's Facebook" href="https://www.instagram.com/gatos_por_vida/" target="_blank" rel="noopener"><img class="social-icons" id="facebook-img" src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-facebook-3.png&r=0&g=0&b=0"></a>
+      </div>
+      </div>
+      </div>
+      
+    </footer>
+    
+</body>
+</html>
